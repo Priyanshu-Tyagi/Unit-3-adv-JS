@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-COMMERCE I</title>
+</head>
+<body>
+    <form onsubmit="submitProduct(event)" id="Products">
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="category" placeholder="Category">
+        <input type="text" id="image" placeholder="Image">
+        <input type="number" id="price" placeholder="Price">
+        <input type="text" id="gender" placeholder="Gender">
+        <input type="text" id="sold" placeholder="Sold">
+        <input type="submit" id="add" >
+    </form>
+</body>
+</html>
+<script>
+
+    function Products(name,category,image,price,gender,sold){
+        this.name=name;
+        this.category=category;
+        this.image=image;
+        this.price=price;
+        this.gender=gender;
+        this.sold=sold;
+    }
+
+    let arr=[];
+
+    function submitProduct(e){
+        e.preventDefault()
+        let form=document.getElementById("Products");
+        let name=form.name.value;
+        let category=form.category.value;
+        let image=form.image.value;
+        let price=form.price.value;
+        let gender=form.gender.value;
+        let sold=form.sold.value;
+
+        let p= new Products(name,category,image,price,gender,sold);
+
+        arr.push(p)
+
+        localStorage.setItem("Products",JSON.stringify(arr));
+    }
+</script>

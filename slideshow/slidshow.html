@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIDESHOW</title>
+</head>
+<body>
+    <button onclick="start()">Start</button>
+    <button onclick="pause()">Pause</button>
+
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+
+    let i = 0,
+        id;
+
+    function start(){
+
+        let images = JSON.parse(localStorage.getItem("images"));
+
+        let container = document.getElementById("container");
+
+
+        id = setInterval(function(){
+            //acessing the image url
+            if(i===images.length){
+                i=0;
+            }
+
+            container.innerHTML = null;
+
+            let image = images[i];
+
+            //append the image
+
+            let img = document.createElement("img");
+            img.src = image;
+
+            container.append(img);
+            i++
+        },3000)
+    }
+
+
+    function pause(){
+
+        clearInterval(id);
+
+    }
+</script>

@@ -1,0 +1,27 @@
+#nav>div{
+    /* border: 1px solid red; */
+    height: 40px;
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+}
+#nav{
+    /* border: 1px solid pink; */
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#slideshow{
+    /* border: 1px solid green; */
+    margin: auto;
+    margin-top: 50px;
+    height: 350px;
+    width: 75%;
+}

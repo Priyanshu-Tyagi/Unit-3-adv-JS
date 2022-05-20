@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll</title>
+    <style>
+        div{
+            border: 1px solid rgb(222, 222, 221);
+            height: 40px;
+        }
+        #container{
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(4,1fr);
+            border: none;
+        }
+        #winner{
+            width: 40%;
+            margin: auto;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="winner"></div>
+    <div id="container">
+        <div id="member-1"></div>
+        <div id="member-2"></div>
+        <div id="member-3"></div>
+        <button id="roll">ROLL THE DICE</button>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("roll").addEventListener("click",function(){rollingDice()});
+
+    let dice1= document.getElementById("member-1");
+    let dice2= document.getElementById("member-2");
+    let dice3= document.getElementById("member-3");
+    let winner= document.getElementById("winner");
+
+    function rollingDice(){
+        var max=0;
+        dice1.innerText= Math.floor(Math.random()*6)+1;
+        dice2.innerText= Math.floor(Math.random()*6)+1;
+        dice3.innerText= Math.floor(Math.random()*6)+1;
+    
+        if(dice1.innerText>max){max=dice1.innerText};
+        if(dice2.innerText>max){max=dice2.innerText};
+        if(dice3.innerText>max){max=dice3.innerText};
+        winner.innerText= max;
+
+        if(dice1.innerText=max){dice1.style.color="green"}
+        else if(dice2.innerText=max){dice2.style.color="green"}
+        else if(dice3.innerText=max){dice3.style.color="green"}
+        else if(dice1.innerText===dice2.innerText||dice1.innerText===dice3.innerText){dice1.innerText.style.color="blue"}
+        else if(dice2.innerText===dice3.innerText||dice2.innerText===dice1.innerText){dice2.innerText.style.color="blue"}
+        else if(dice3.innerText===dice1.innerText||dice3.innerText===dice2.innerText){dice3.innerText.style.color="blue"}
+        // else{document.querySelectorAll("#container>div").innerText.sty}
+    }
+    
+</script>

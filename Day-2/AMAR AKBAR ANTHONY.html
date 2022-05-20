@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //AMAR AKBAR ANTHONY
+
+    let amar={
+        name:"Amar",
+        Skill:"Singer",
+        lives:"Goa",
+    }
+    let akbar={
+        name:"Akbar",
+        skill:"Chef",
+        lives:"Mumbai",
+    }
+    let anthony={
+        name:"Anthony",
+        skill:"Magician",
+        lives:"Kashmir",
+    }
+
+    function skill1(){
+        console.log(`${amar.name} has taken ${this.name}'s ${this.skill} skill's`)
+    }
+    function skill2(){
+        console.log(`${akbar.name} has taken ${this.name}'s ${this.skill} skill's`)
+    }
+    function skill3(){
+        console.log(`${anthony.name} has taken ${this.name}'s ${this.skill} skill's`)
+    }
+
+    skill1.call(anthony);
+    skill2.call(amar);
+    skill3.call(akbar);
+</script>
