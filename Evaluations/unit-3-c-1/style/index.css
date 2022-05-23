@@ -1,0 +1,47 @@
+#navbar{
+    display: flex;
+    margin: 0px;
+    padding: 15px 0px;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#show_products{
+    border: none;
+    background-color: gray;
+    padding: 10px 25px;
+    border-radius: 12px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+div>h2{
+    text-align: center;
+}
+#products{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 15px;
+    width: 85%;
+    margin: auto;
+    
+}
+#add_product{
+    width: 85%;
+    margin-left: 7.8%;
+    margin-top: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: grey;
+    padding: 10px 25px;
+    color: white;
+}
+#abc{
+    width: 25%;
+    margin: auto;
+    margin-top:60px;
+    /* border:1px solid red; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    padding: 10px 0px 30px 0px;
+    border-radius: 18px;
+}
