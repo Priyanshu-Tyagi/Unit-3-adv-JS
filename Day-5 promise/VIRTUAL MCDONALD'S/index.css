@@ -1,0 +1,27 @@
+#fooditems{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 50%;
+    /* border: 1px solid red; */
+    margin-top: 80px;
+    /* background-color: yellow; */
+}
+#logo{
+    display: flex;
+    width: 30%;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+div>img{
+    width: 100px;
+    height: 100px;
+}
+#placeorder{
+    margin-left: 45%;
+    border: none;
+    margin-top: 25px;
+    background-color: yellow;
+    padding: 10px 25px;
+    border-radius: 8px;
+}
