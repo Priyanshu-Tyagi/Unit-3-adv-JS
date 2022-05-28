@@ -1,0 +1,30 @@
+#map{
+    overflow:hidden;
+    background:none!important;
+    height:400px;
+    width: 500px;
+}
+#show{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    margin-top: 60px;
+    justify-content: space-around;
+}
+#card{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    width:150%;
+    /* padding: 10px; */
+}
+#image{
+    display: flex;
+}
+#image>img{
+    height: 70px;
+    width: 70px;
+}
+/* #map{
+    margin-left: 40px;
+} */
