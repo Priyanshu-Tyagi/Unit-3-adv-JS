@@ -1,11 +1,21 @@
 let form = document.getElementById("form");
+
 form.addEventListener("submit",function(e){
+    
     e.preventDefault();
+
     let val = document.getElementById("search");
+
+    open()
+
+    // document.getElementsByClassName
+    
     const url = `https://www.omdbapi.com/?t=${val.value.replace(/ /,"+")}&apikey=8a265d0`;
-    getData(url)
-    // console.log(val.value.replace(/ /,"+"));
-    // console.log(url);
+    
+    getData(url);
+    
+    movies_div.style.display="none";
+    trend_div.style.display="grid";
 })
 
 async function getData(url){
@@ -23,10 +33,122 @@ async function getData(url){
     }
 }
 
+async function searchMovies(q){
+    try {
+        let url = `https://www.omdbapi.com/?s=${q}&apikey=8a265d0`;
+
+        let res = await fetch(url);
+
+        let data = await res.json();
+
+        return data.Search;
+    } catch (error) {
+        console.log("ERROR : ",error);
+    }
+}
+
+let id;
+
+function debouncefunction(func,delay){
+    if(id){
+        clearTimeout(id)
+    }
+    id = setTimeout(function(){
+        func();
+    },delay)
+}
+
+async function main(){
+    let query = document.getElementById("search").value;
+
+    let response = searchMovies(query);
+
+    let data = await response;
+
+    if(query===""){
+        movies_div.style.display="none";
+    }else{
+        movies_div.style.display="block";
+    }
+
+    appendMovies(data)
+}
+
+let movies_div=document.getElementById("searchbox")
+
+function appendMovies(movies){
+    movies_div.innerHTML=null;
+
+    if(movies === undefined){
+        return false;
+    }
+
+    movies.forEach(function(el){
+        let sediv = document.createElement("div");
+        let p = document.createElement("p");
+        p.innerText = el.Title;
+        sediv.onclick=function(){open(el)};
+        sediv.style.cursor="pointer";   
+        sediv.append(p);
+        movies_div.append(sediv);
+    });
+}
+
+function open(el){
+
+    let val = el.Title;
+    
+    const url = `https://www.omdbapi.com/?t=${val.replace(/ /,"+")}&apikey=8a265d0`;
+    
+    getData(url)
+    
+    movies_div.style.display="none";
+}
+
+trend();
+
+function trend(){
+    let trendurl = "https://api.themoviedb.org/3/trending/movie/day?api_key=7592a4c96fcb2c6c3a94217789858d16";
+
+
+    trendData(trendurl);
+}
+
+async function trendData(url){
+    try{
+        let res = await fetch(url);
+
+        let trendmovie = await res.json();
+
+        trendappend(trendmovie.results)
+        
+        // console.log(trendmovie.results);
+    }catch(err){
+        let res = await fetch(url);;
+    }
+}
+
+let trend_div = document.getElementById("trend");
+
+function trendappend(trendmovie){
+    trendmovie.forEach(function(el){
+        let movcard = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = `https://www.themoviedb.org/t/p/w220_and_h330_face${el.poster_path}`;
+
+        movcard.append(img);
+
+        trend_div.append(movcard);
+    });
+}
+
 function append(data){
     let cont = document.getElementById("container");
 
     cont.innerHTML = null;
+
+    trend_div.style.display="none";
 
     if(data.Response==="True"){
 

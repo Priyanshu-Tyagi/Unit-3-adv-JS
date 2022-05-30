@@ -13,11 +13,13 @@
     </div>
     <div id="bar">
         <form id="form">
-            <input type="text" id="search">
+            <input type="text" oninput="debouncefunction(main,1000)" id="search">
             <input type="submit">
         </form>
+        <div id="searchbox"></div>
     </div>
     <div id="container"></div>
+    <div id="trend"></div>
 </body>
 </html>
 <script src="./index.js"></script>
