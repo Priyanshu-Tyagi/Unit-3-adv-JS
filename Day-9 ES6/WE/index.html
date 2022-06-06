@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #results{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+            width:0.8vh;
+            /* margin: auto; */
+            margin-top: 50px;
+        }
+        #navbar {
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid rgb(221,221,222);
+            padding-bottom: 15px;
+            /* justify-content: center; */
+        }
+        #navbar>div{
+            width: 50%;
+            margin-right: 20px;
+            /* margin-right: 5px; */
+        }
+        #navbar>img{
+            width: 120px;
+            height: 35px;
+            margin-right: 60px;
+            /* margin-top: 5px; */
+        }
+        #query{
+            height: 30px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="logo">
+
+        <div id="search"><input type="text" id="query"></div>
+        
+        <button onclick="search()"><img height="26px" src="https://cdn-icons-png.flaticon.com/128/622/622669.png" alt=""></button>
+    </div>
+
+    <div id="results"></div>
+    <div id="video"></div>
+    
+</body>
+</html>
+<script src="./index.js"></script>

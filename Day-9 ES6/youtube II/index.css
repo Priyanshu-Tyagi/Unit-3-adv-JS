@@ -1,0 +1,38 @@
+#results{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    width:0.8vh;
+    /* margin: auto; */
+    margin-top: 50px;
+}
+#navbar {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgb(221,221,222);
+    padding-bottom: 15px;
+    /* justify-content: center; */
+}
+#navbar>div{
+    width: 50%;
+    margin-right: 20px;
+    /* margin-right: 5px; */
+}
+#navbar>a>img{
+    width: 120px;
+    height: 35px;
+    margin-right: 60px;
+    /* margin-top: 5px; */
+}
+#query{
+    height: 30px;
+    width: 100%;
+}
+#name{
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#card{
+    width:330px;
+}

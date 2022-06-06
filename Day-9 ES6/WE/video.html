@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./video.css">
+</head>
+<body>
+    <div id="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/YouTube_Premium_logo.svg/1280px-YouTube_Premium_logo.svg.png" alt="logo">
+
+        <div id="search"><input type="text" id="query"></div>
+        
+        <button onclick="search()"><img height="26px" src="https://cdn-icons-png.flaticon.com/128/622/622669.png" alt=""></button>
+    </div>
+
+    <h1>Your Selected Video</h1>
+
+    <div id="box">
+        <iframe id="video" allow="loop=1;"></iframe>
+    </div>
+    
+</body>
+</html>
+<script>
+    let iframe = document.getElementById("video");
+    iframe.src = JSON.parse(localStorage.getItem("link"));
+    // iframe.videoEmbedable="True";
+
+    cont.append(iframe);
+</script>

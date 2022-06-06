@@ -1,0 +1,33 @@
+#box{
+    height: 500px;
+    width: 61.2%;
+    margin: auto;
+}
+#video{
+    height: 100%;
+    width: 100%;
+    border: none;
+
+}
+#navbar {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid rgb(221,221,222);
+    padding-bottom: 15px;
+    /* justify-content: center; */
+}
+#navbar>div{
+    width: 50%;
+    margin-right: 20px;
+    /* margin-right: 5px; */
+}
+#navbar>img{
+    width: 120px;
+    height: 35px;
+    margin-right: 60px;
+    /* margin-top: 5px; */
+}
+#query{
+    height: 30px;
+    width: 100%;
+}
