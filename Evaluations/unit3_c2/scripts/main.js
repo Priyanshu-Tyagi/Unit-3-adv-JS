@@ -8,7 +8,6 @@ form.addEventListener("submit",function(e){
         address : form.address.value,
         amount : Number(form.amount.value),
     }
-
     console.log(typeof data.amount)
 
     localStorage.setItem("user",JSON.stringify(data));

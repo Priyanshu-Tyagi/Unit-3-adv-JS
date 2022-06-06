@@ -3,7 +3,7 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color:rgb(221,221,222);
+    background-color: rgb(221,221,222);
     border-bottom: 4px solid rgb(221,221,222);
     margin: -10px -10px 0px -10px;
 }
@@ -27,6 +27,5 @@ a{
 input{
     margin:5px 15px;
     width:90%;
-    padding:4px;
+    padding: 4px;
 }
-

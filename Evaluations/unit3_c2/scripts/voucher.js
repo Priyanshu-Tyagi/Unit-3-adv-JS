@@ -20,13 +20,13 @@ function append(data){
         let img = document.createElement("img");
         img.src = el.image;
         imgdiv.append(img);
-
+        
         let details = document.createElement("div");
         details.id = "details";
         let name = document.createElement("p");
         name.innerText = el.name;
         let price = document.createElement("p");
-        price.innerText = Number(el.price);
+        price.innerText = el.price;
         details.append(name,price);
 
         let btn = document.createElement("button");
@@ -34,7 +34,7 @@ function append(data){
         btn.innerText = "Buy";
         btn.addEventListener("click",function(){buyfunc(el)})
 
-        card.append(imgdiv,details,btn)
+        card.append(imgdiv,details,btn);
 
         cont.append(card);
     });
@@ -53,14 +53,14 @@ wallet.innerText = userdata.amount;
 
 function money(sd){
     wallet.innerText -=sd;
-   
+
     localStorage.setItem("amount",JSON.stringify(wallet.innerText))
     console.log(typeof sd)
 }
 
 
 function buyfunc(el){
-    if(Number(wallet.innerText) > el.price){
+    if(Number(wallet.innerText)>el.price){
         savedata.push(el);
         localStorage.setItem("purchase",JSON.stringify(savedata));
         alert("Hurray! purchase successful")
