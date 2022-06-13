@@ -10,7 +10,12 @@ navbar_div.innerHTML = navbar()
 
 
 async function fetchData(){
-    let data = await axios.get('https://fakestoreapi.com/products/category/electronics')
+    let data = await axios({
+        method: 'post',
+        url: 'https://api.unsplash.com/search/photos?per_page=12&query=office&client_id=nfXrMtuCEqs0TX3m-brImcyoyDbwXGbuGx2UxARdqu4',
+        data: bodyFormData,
+        headers: {'Content-Type': 'multipart/form-data' }
+        })
 
     console.log(data);
 }
